@@ -26,7 +26,7 @@ export default function Proof() {
                   {t.tag}
                 </span>
               </div>
-              <p className="mt-8 text-[clamp(3rem,9vw,5rem)] font-extrabold leading-none tracking-tight text-mint">
+              <p className="mt-8 text-[clamp(3rem,9vw,5rem)] font-black leading-none tracking-tight text-mint">
                 {t.stat}
               </p>
               <p className="mt-3 text-sm text-ink-muted">{t.statLabel}</p>

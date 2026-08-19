@@ -43,9 +43,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Manrope is loaded as a stylesheet rather than via next/font so the
-            build never depends on reaching Google at compile time. The Cyrillic
-            subset is included for the RU copy. */}
+        {/* Inter is the brand typeface — Black (900) carries the display type.
+            Loaded as a stylesheet rather than via next/font so the build never
+            depends on reaching Google at compile time. Google serves the
+            Cyrillic subset off the same URL for the RU copy. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -57,7 +58,7 @@ export default function RootLayout({
             link sits in the root layout and so applies to every page. */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         />
       </head>
       <body className="antialiased">

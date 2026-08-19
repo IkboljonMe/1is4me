@@ -24,7 +24,7 @@ export default function Offers() {
               {/* Oversized ghost numeral, cropped by the card. */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute -right-4 -top-8 select-none text-[7rem] font-extrabold leading-none text-mint/[0.06] transition-colors group-hover:text-mint/[0.1]"
+                className="pointer-events-none absolute -right-4 -top-8 select-none text-[7rem] font-black leading-none text-mint/[0.06] transition-colors group-hover:text-mint/[0.1]"
               >
                 {item.n}
               </span>

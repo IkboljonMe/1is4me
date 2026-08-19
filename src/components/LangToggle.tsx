@@ -20,7 +20,7 @@ export default function LangToggle({ className = "" }: { className?: string }) {
           aria-pressed={lang === l}
           className={`rounded-full px-2.5 py-1 text-[11px] font-bold tracking-wider transition-colors ${
             lang === l
-              ? "bg-mint text-[#0a1a13]"
+              ? "bg-mint text-bg"
               : "text-ink-muted hover:text-ink"
           }`}
         >

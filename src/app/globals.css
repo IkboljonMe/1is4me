@@ -1,28 +1,33 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------
-   1is4me — deep green / black premium system.
-   Palette carried over from the existing audit form so the landing
-   and the form read as one product.
+   1is4me — brand design system.
+
+   Three brand colours are fixed and must not drift:
+     deep green #123F32 · cream #F5F5EC · mint #B8E8D0
+   Everything else below is a tint or shade derived from those three
+   so the landing and the audit form read as one product.
+   Typeface: Inter, Black (900) for display.
    --------------------------------------------------------------- */
 :root {
-  --bg: #0a1a13;
-  --bg-raise: #0e241a;
-  --bg-vignette: #050d09;
-  --card: #123024;
-  --card-hover: #163a2c;
-  --line: #1d4433;
-  --line-strong: #27573f;
+  /* Deep green — the brand ground, plus the shades built around it. */
+  --bg: #123f32;
+  --bg-raise: #164c3c;
+  --bg-vignette: #0b281f;
+  --card: #17503f;
+  --card-hover: #1c5d4a;
+  --line: #256750;
+  --line-strong: #327d63;
 
-  /* Cream headline ink + muted greens, straight off the brand carousel. */
-  --ink: #f2efe4;
-  --ink-soft: #cfe0d2;
-  --ink-muted: #93b09d;
-  --ink-faint: #628072;
+  /* Cream headline ink, stepped down through muted greens. */
+  --ink: #f5f5ec;
+  --ink-soft: #dce7de;
+  --ink-muted: #a9c4b4;
+  --ink-faint: #8caf9b;
 
   /* Mint is the brand's signature accent; gold stays as the quiet second. */
-  --mint: #8fe39a;
-  --mint-deep: #5cc06e;
+  --mint: #b8e8d0;
+  --mint-deep: #93d6b4;
   --gold: #c9b97a;
   --sage: #6fa392;
   --c-identity: #c9b97a;
@@ -50,7 +55,7 @@
   --color-mint-deep: var(--mint-deep);
   --color-gold: var(--gold);
   --color-sage: var(--sage);
-  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --radius-card: 18px;
 }
 
@@ -60,7 +65,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
@@ -88,7 +93,7 @@ body::after {
 /* Everything real sits above the two overlays. */
 .layer { position: relative; z-index: 3; }
 
-::selection { background: var(--mint); color: #0a1a13; }
+::selection { background: var(--mint); color: var(--bg); }
 
 :focus-visible {
   outline: 2px solid var(--mint);

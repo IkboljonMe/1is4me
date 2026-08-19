@@ -31,7 +31,7 @@ export default function CTA() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/audit-form"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-mint px-8 py-4 text-sm font-bold text-[#0a1a13] transition hover:bg-mint-deep"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-mint px-8 py-4 text-sm font-bold text-bg transition hover:bg-mint-deep"
           >
             {t.primary}
             <span className="transition-transform group-hover:translate-x-0.5">→</span>

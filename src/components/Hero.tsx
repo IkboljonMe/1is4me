@@ -31,7 +31,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h1 className="mt-7 text-[clamp(2.6rem,8vw,5.5rem)] font-extrabold leading-[0.98] tracking-[-0.03em]">
+          <h1 className="mt-7 text-[clamp(2.6rem,8vw,5.5rem)] font-black leading-[0.98] tracking-[-0.03em]">
             {t.title.map((line, i) => (
               <span key={line} className="block">
                 <span className={i === 2 ? "text-mint" : "text-ink"}>{line}</span>
@@ -53,7 +53,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/audit-form"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-mint px-7 py-3.5 text-sm font-bold text-[#0a1a13] transition hover:bg-mint-deep"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-mint px-7 py-3.5 text-sm font-bold text-bg transition hover:bg-mint-deep"
             >
               {t.primary}
               <span className="transition-transform group-hover:translate-x-0.5">→</span>

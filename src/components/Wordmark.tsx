@@ -2,7 +2,7 @@
 export default function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`text-lg font-extrabold tracking-tight text-ink ${className}`}
+      className={`text-lg font-black tracking-tight text-ink ${className}`}
     >
       <span className="text-mint">1</span>is
       <span className="text-mint">4</span>me

@@ -33,7 +33,7 @@ export default function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-line/70 bg-[#0a1a13]/85 backdrop-blur-xl"
+          ? "border-b border-line/70 bg-bg/85 backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
@@ -59,7 +59,7 @@ export default function Nav() {
           <LangToggle />
           <Link
             href="/audit-form"
-            className="hidden rounded-full bg-mint px-4 py-2 text-[13px] font-bold text-[#0a1a13] transition hover:bg-mint-deep sm:inline-block"
+            className="hidden rounded-full bg-mint px-4 py-2 text-[13px] font-bold text-bg transition hover:bg-mint-deep sm:inline-block"
           >
             {t.cta}
           </Link>
@@ -78,7 +78,7 @@ export default function Nav() {
       </nav>
 
       {open ? (
-        <div className="border-t border-line bg-[#0a1a13]/95 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-line bg-bg/95 backdrop-blur-xl lg:hidden">
           <ul className="mx-auto flex max-w-6xl flex-col px-5 py-2 sm:px-8">
             {links.map((l) => (
               <li key={l.href}>
@@ -95,7 +95,7 @@ export default function Nav() {
               <Link
                 href="/audit-form"
                 onClick={() => setOpen(false)}
-                className="block rounded-full bg-mint px-4 py-2.5 text-center text-sm font-bold text-[#0a1a13]"
+                className="block rounded-full bg-mint px-4 py-2.5 text-center text-sm font-bold text-bg"
               >
                 {t.cta}
               </Link>

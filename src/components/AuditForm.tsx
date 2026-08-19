@@ -95,7 +95,7 @@ export default function AuditForm() {
   if (status === "done") {
     return (
       <div className="layer mx-auto flex min-h-screen w-full max-w-2xl flex-col items-center justify-center px-5 py-24 text-center">
-        <div className="grid h-16 w-16 place-items-center rounded-full bg-mint text-2xl font-bold text-[#0a1a13]">
+        <div className="grid h-16 w-16 place-items-center rounded-full bg-mint text-2xl font-bold text-bg">
           ✓
         </div>
         <h1 className="mt-8 text-3xl font-extrabold text-ink sm:text-4xl">
@@ -148,7 +148,7 @@ export default function AuditForm() {
       </header>
 
       {/* -------------------------------------------------------- progress */}
-      <div className="sticky top-0 z-20 -mx-5 mt-10 border-y border-line bg-[#0a1a13]/90 px-5 py-3 backdrop-blur-lg sm:-mx-6 sm:px-6">
+      <div className="sticky top-0 z-20 -mx-5 mt-10 border-y border-line bg-bg/90 px-5 py-3 backdrop-blur-lg sm:-mx-6 sm:px-6">
         <div className="flex items-center gap-4">
           <div className="h-1 flex-1 overflow-hidden rounded-full bg-line">
             <div
@@ -187,7 +187,7 @@ export default function AuditForm() {
                 <div className="flex gap-4">
                   <span
                     className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-[11px] font-bold transition-colors ${
-                      filled ? "text-[#0a1a13]" : "text-ink-faint"
+                      filled ? "text-bg" : "text-ink-faint"
                     }`}
                     style={{
                       background: filled ? CAT_COLORS[q.cat] : "transparent",
@@ -283,7 +283,7 @@ export default function AuditForm() {
                               } ${checked ? "border-[var(--cat)] bg-[var(--cat)]" : "border-line-strong"}`}
                             >
                               {checked ? (
-                                <span className="text-[9px] font-bold text-[#0a1a13]">
+                                <span className="text-[9px] font-bold text-bg">
                                   ✓
                                 </span>
                               ) : null}
@@ -318,7 +318,7 @@ export default function AuditForm() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="mt-6 w-full rounded-full bg-mint px-8 py-4 text-sm font-bold text-[#0a1a13] transition hover:bg-mint-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            className="mt-6 w-full rounded-full bg-mint px-8 py-4 text-sm font-bold text-bg transition hover:bg-mint-deep disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
             {status === "sending" ? t.submitting : t.submitBtn}
           </button>

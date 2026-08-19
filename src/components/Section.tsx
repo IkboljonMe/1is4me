@@ -21,7 +21,7 @@ export function SectionHead({
           {tag}
         </span>
       </div>
-      <h2 className="mt-5 text-3xl font-extrabold leading-[1.12] tracking-tight text-ink sm:text-4xl md:text-5xl">
+      <h2 className="mt-5 text-3xl font-black leading-[1.12] tracking-tight text-ink sm:text-4xl md:text-5xl">
         {title}
       </h2>
       {lead ? (
