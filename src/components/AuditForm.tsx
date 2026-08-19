@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { content } from "@/lib/content";
 import { formCopy } from "@/lib/formCopy";
 import { CAT_COLORS, QUESTIONS, type Question } from "@/lib/questions";
 import { useLang } from "./LangProvider";

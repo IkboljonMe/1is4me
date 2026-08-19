@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import { LangProvider } from "@/components/LangProvider";
 import "./globals.css";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://1is4me.com";
 
@@ -50,7 +42,25 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} antialiased`}>
+      <head>
+        {/* Manrope is loaded as a stylesheet rather than via next/font so the
+            build never depends on reaching Google at compile time. The Cyrillic
+            subset is included for the RU copy. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- the rule
+            targets pages/_document, which the App Router does not have; this
+            link sits in the root layout and so applies to every page. */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        />
+      </head>
+      <body className="antialiased">
         <LangProvider>{children}</LangProvider>
       </body>
     </html>

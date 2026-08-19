@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "1is4me",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,5 +23,6 @@
     "eslint-config-next": "16.3.1",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "1is4me \u2014 AI Growth Partner. Landing site and pre-audit questionnaire."
 }
