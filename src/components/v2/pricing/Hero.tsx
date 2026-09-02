@@ -116,7 +116,7 @@ export default function Hero() {
     <section className="relative isolate overflow-hidden bg-night">
       <Wave className="-right-[28%] top-[2%] aspect-[3/2] w-[150%] opacity-40 sm:-right-[16%] sm:w-[105%] lg:-right-[16%] lg:-top-[6%] lg:w-[58%] lg:opacity-70" />
 
-      <Container className="relative z-10 grid gap-10 pt-10 pb-10 sm:pt-12 sm:pb-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] lg:items-center lg:gap-12 lg:pt-14 lg:pb-14">
+      <Container className="relative z-10 grid gap-10 pt-10 pb-8 sm:pt-12 sm:pb-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-14 lg:pt-14 lg:pb-6">
         {/* ------------------------------------------- left: the proposition */}
         <div>
           <Reveal>
@@ -143,7 +143,7 @@ export default function Hero() {
         </div>
 
         {/* ------------------------------------ right: the assurance blocks */}
-        <ul className="flex flex-wrap gap-x-6 gap-y-6 sm:gap-x-8 lg:gap-x-6">
+        <ul className="grid gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-7">
           {t.blocks.map((block, i) => {
             const { Icon, ringed } = BLOCK_MARKS[i];
             return (
@@ -151,7 +151,7 @@ export default function Hero() {
                 as="li"
                 key={block.title}
                 delay={120 + i * 60}
-                className="flex min-w-0 flex-1 basis-[10rem] items-start gap-3"
+                className="flex min-w-0 items-start gap-3"
               >
                 <span
                   className={`grid size-8 shrink-0 place-items-center ${

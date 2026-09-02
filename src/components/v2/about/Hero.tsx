@@ -207,7 +207,7 @@ export default function Hero() {
     <section className="relative isolate overflow-hidden bg-night">
       <Wave className="-right-[26%] top-[2%] aspect-[3/2] w-[150%] opacity-40 sm:-right-[14%] sm:w-[100%] lg:-right-[12%] lg:-top-[16%] lg:w-[62%] lg:opacity-70" />
 
-      <Container className="relative z-10 grid gap-10 py-10 sm:py-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,25rem)] lg:items-start lg:gap-10 lg:py-14">
+      <Container className="relative z-10 grid gap-10 py-10 sm:py-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,23rem)] lg:items-start lg:gap-10 lg:py-14">
         {/* ------------------------------------------- left: the proposition */}
         <div>
           <Reveal>
@@ -215,7 +215,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={60}>
-            <h1 className="mt-3 text-[clamp(2rem,8.4vw,3.2rem)] leading-[1.05] font-semibold tracking-[-0.035em] text-snow lg:text-[clamp(2.6rem,4.1vw,3.6rem)]">
+            <h1 className="mt-3 text-[clamp(1.9rem,7.6vw,2.6rem)] leading-[1.08] font-semibold tracking-[-0.035em] text-snow lg:text-[clamp(2.1rem,3.2vw,2.9rem)]">
               <span className="block">
                 {t.headline.before}{" "}
                 <span className="text-leaf-bright">{t.headline.green}</span>
@@ -233,24 +233,14 @@ export default function Hero() {
 
           {/* ------------------------------------------- the four proof-free items */}
           <Reveal delay={180}>
-            <dl className="mt-8 grid grid-cols-2 gap-x-4 gap-y-6 sm:mt-9 sm:gap-x-5 md:grid-cols-4">
+            <dl className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 sm:mt-9 sm:grid-cols-2 sm:gap-y-6">
               {t.items.map((item, i) => {
                 const Icon = ITEM_ICONS[i];
                 return (
                   <div
                     key={item.title}
-                    className={`relative min-w-0 ${i > 0 ? "md:pl-5" : ""}`}
+                    className="relative min-w-0"
                   >
-                    {/* The mockup's divider is a short rule level with the
-                        icon row, not a full-height column border. It is
-                        dropped below `md`, where the items wrap into 2×2. */}
-                    {i > 0 ? (
-                      <span
-                        aria-hidden
-                        className="absolute top-0.5 left-0 hidden h-11 w-px bg-edge md:block"
-                      />
-                    ) : null}
-
                     <dt className="flex items-start gap-2.5">
                       <Icon
                         aria-hidden
@@ -258,11 +248,11 @@ export default function Hero() {
                         strokeWidth={1.5}
                         className="mt-px shrink-0 text-leaf-bright sm:size-[26px]"
                       />
-                      <span className="min-w-0 text-[13px] leading-[1.3] font-semibold text-snow sm:text-sm">
+                      <span className="min-w-0 text-sm leading-[1.35] font-semibold text-snow">
                         {item.title}
                       </span>
                     </dt>
-                    <dd className="mt-2.5 pl-[34px] text-[11.5px] leading-[1.55] text-snow-muted sm:pl-9 sm:text-xs">
+                    <dd className="mt-1.5 pl-[34px] text-[13px] leading-[1.55] text-snow-muted sm:pl-9">
                       {item.desc}
                     </dd>
                   </div>

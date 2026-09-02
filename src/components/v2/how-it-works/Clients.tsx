@@ -5,7 +5,7 @@ import { CircleCheck } from "lucide-react";
 import { useLang } from "@/components/LangProvider";
 import Reveal from "@/components/Reveal";
 import ClientMarks from "@/components/v2/ClientMarks";
-import { Button, Container } from "@/components/v2/ui";
+import { Container } from "@/components/v2/ui";
 import type { Copy } from "@/lib/v2/copy";
 
 /**
@@ -104,18 +104,11 @@ export default function Clients() {
         </Reveal>
 
         <Reveal delay={80}>
-          {/* Three wordmarks plus the CTA only fit side by side on a wide
-              screen, so the row stacks and re-centres below `lg`. */}
-          <div className="mt-8 flex flex-col items-center gap-8 sm:mt-9 lg:flex-row lg:justify-between lg:gap-10">
-            <ClientMarks className="lg:min-w-0 lg:flex-1 lg:justify-start lg:gap-x-10" />
-
-            <div className="flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto">
-              <Button href="/audit-form" className="w-full sm:w-auto">
-                {t.cta}
-              </Button>
-              <AuditChips items={t.chips} />
-            </div>
-          </div>
+          {/* The mockup pairs these marks with an audit button, but the closing
+              band sits directly beneath with the same button and the same
+              chips — two identical CTAs a few rows apart read as a mistake.
+              The marks stand alone; the band does the asking. */}
+          <ClientMarks className="mt-8 sm:mt-9 lg:gap-x-14" />
         </Reveal>
       </Container>
     </section>

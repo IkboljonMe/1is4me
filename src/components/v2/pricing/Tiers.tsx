@@ -208,9 +208,9 @@ export default function Tiers() {
   return (
     <section
       aria-labelledby="pricing-tiers-title"
-      className="py-10 sm:py-12 lg:py-14"
+      className="pt-6 pb-10 sm:pt-8 sm:pb-12 lg:pt-8 lg:pb-14"
     >
-      <Container className="grid gap-8 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:items-center lg:gap-12">
+      <Container className="grid gap-8 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:items-start lg:gap-12">
         {/* -------------------------------------------------- left: the label */}
         <Reveal>
           <h2
