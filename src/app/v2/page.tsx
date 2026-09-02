@@ -1,10 +1,10 @@
 import Nav from "@/components/v2/Nav";
-import Hero from "@/components/v2/Hero";
-import Achieve from "@/components/v2/Achieve";
-import Doors from "@/components/v2/Doors";
-import Tools from "@/components/v2/Tools";
-import Proof from "@/components/v2/Proof";
-import CtaBand from "@/components/v2/CtaBand";
+import Hero from "@/components/v2/home/Hero";
+import Achieve from "@/components/v2/home/Achieve";
+import Doors from "@/components/v2/home/Doors";
+import Tools from "@/components/v2/home/Tools";
+import Proof from "@/components/v2/home/Proof";
+import CtaBand from "@/components/v2/home/CtaBand";
 import Footer from "@/components/v2/Footer";
 
 /**

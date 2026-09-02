@@ -1,21 +1,10 @@
 "use client";
 
-import {
-  Brain,
-  CalendarDays,
-  ChartNoAxesCombined,
-  Heart,
-  LayoutDashboard,
-  Lightbulb,
-  PenLine,
-  Search,
-  type LucideIcon,
-} from "lucide-react";
-
 import Reveal from "@/components/Reveal";
 import { Button, Container, Eyebrow, Panel, Wave } from "@/components/v2/ui";
 import { useLang } from "@/components/LangProvider";
 import type { Copy } from "@/lib/v2/copy";
+import { TOOLS, TOOL_CAPTIONS } from "@/lib/v2/tools";
 
 /**
  * "Powerful AI tools" — the AI-services panel from reference/home.PNG.
@@ -25,25 +14,12 @@ import type { Copy } from "@/lib/v2/copy";
  * its own hue so the grid reads as a menu rather than a list. Values are
  * sampled from the mockup and stay dark enough to sit on the near-black card.
  */
-const TOOLS: { name: string; Icon: LucideIcon; chip: string }[] = [
-  { name: "AI Writer", Icon: PenLine, chip: "#0F4585" },
-  { name: "Market Research", Icon: Search, chip: "#96303A" },
-  { name: "Business Ideas", Icon: Lightbulb, chip: "#8A7318" },
-  { name: "Competitor Analysis", Icon: Brain, chip: "#0F7A71" },
-  { name: "Content Planner", Icon: CalendarDays, chip: "#5A2C8C" },
-  { name: "Data Analysis", Icon: ChartNoAxesCombined, chip: "#2A7A2C" },
-  { name: "Social Media Ideas", Icon: Heart, chip: "#A3355F" },
-  { name: "Business Check", Icon: LayoutDashboard, chip: "#B27C1B" },
-];
-
 type ToolsCopy = {
   eyebrow: string;
   titleTop: string;
   titleBottom: string;
   lead: string;
   cta: string;
-  /** One caption per tool, in the order of TOOLS. Tool names stay in English. */
-  captions: string[];
 };
 
 const copy: Copy<ToolsCopy> = {
@@ -54,16 +30,6 @@ const copy: Copy<ToolsCopy> = {
     lead:
       "From content and research to analysis and automation — our AI services save you time and help you do more.",
     cta: "Explore AI Services",
-    captions: [
-      "Create content",
-      "Get insights",
-      "Find opportunities",
-      "Stay ahead",
-      "Plan smarter",
-      "Understand data",
-      "Grow your presence",
-      "Quick business review",
-    ],
   },
   uz: {
     eyebrow: "AI xizmatlarimizni sinab koʻring",
@@ -72,16 +38,6 @@ const copy: Copy<ToolsCopy> = {
     lead:
       "Kontent va tadqiqotdan tahlil va avtomatlashtirishgacha — AI xizmatlarimiz vaqtingizni tejaydi va koʻproq ish qilishga yordam beradi.",
     cta: "AI xizmatlarini koʻrish",
-    captions: [
-      "Kontent yarating",
-      "Xulosalar oling",
-      "Imkoniyat toping",
-      "Oldinda boʻling",
-      "Rejani puxta tuzing",
-      "Maʼlumotni tushuning",
-      "Auditoriyangizni oshiring",
-      "Tezkor biznes tekshiruvi",
-    ],
   },
   ru: {
     eyebrow: "Попробуйте наши AI-сервисы",
@@ -90,22 +46,13 @@ const copy: Copy<ToolsCopy> = {
     lead:
       "От контента и исследований до анализа и автоматизации — наши AI-сервисы экономят время и помогают делать больше.",
     cta: "Смотреть AI-сервисы",
-    captions: [
-      "Создавайте контент",
-      "Получайте выводы",
-      "Находите возможности",
-      "Будьте впереди",
-      "Планируйте точнее",
-      "Понимайте данные",
-      "Растите охват",
-      "Быстрая проверка бизнеса",
-    ],
   },
 };
 
 export default function Tools() {
   const { lang } = useLang();
   const t = copy[lang];
+  const captions = TOOL_CAPTIONS[lang];
 
   return (
     <section className="pt-6 sm:pt-8">
@@ -158,7 +105,7 @@ export default function Tools() {
                       {name}
                     </p>
                     <p className="mt-1 text-xs text-snow-muted">
-                      {t.captions[i]}
+                      {captions[i]}
                     </p>
                   </Reveal>
                 ))}

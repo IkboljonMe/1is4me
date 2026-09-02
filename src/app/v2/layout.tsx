@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "1is4Me — Growth Partner",
   description:
     "We help businesses understand, plan and build with confidence. One partner for your growth journey.",
+  // The rebuild is public while it is assembled page by page, and several of
+  // its nav links still 404. Keep it out of the index until it replaces `/`.
+  robots: { index: false, follow: false },
 };
 
 /**
