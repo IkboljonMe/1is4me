@@ -37,7 +37,7 @@ const copy: Copy<FooterCopy> = {
       },
       smartTools: {
         title: "Smart Tools",
-        items: ["All AI Tools", "AI for Marketing", "AI for Business"],
+        items: ["All Tools", "For Marketing", "For Business"],
       },
       company: {
         title: "Company",
@@ -66,11 +66,7 @@ const copy: Copy<FooterCopy> = {
       },
       smartTools: {
         title: "Aqlli vositalar",
-        items: [
-          "Barcha AI vositalari",
-          "Marketing uchun AI",
-          "Biznes uchun AI",
-        ],
+        items: ["Barcha vositalar", "Marketing uchun", "Biznes uchun"],
       },
       company: {
         title: "Kompaniya",
@@ -99,7 +95,7 @@ const copy: Copy<FooterCopy> = {
       },
       smartTools: {
         title: "Умные инструменты",
-        items: ["Все AI-инструменты", "AI для маркетинга", "AI для бизнеса"],
+        items: ["Все инструменты", "Для маркетинга", "Для бизнеса"],
       },
       company: {
         title: "Компания",
