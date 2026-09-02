@@ -211,7 +211,7 @@ export default function ToolGrid() {
                     type="button"
                     onClick={() => setActive(id)}
                     aria-pressed={isActive}
-                    className={`rounded-lg border px-3 py-1.5 text-[12.5px] font-medium whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none sm:px-3.5 sm:py-2 sm:text-[13px] lg:px-3 lg:text-[12px] xl:px-3.5 xl:text-[13px] ${
+                    className={`inline-flex min-h-10 items-center rounded-lg border px-3 text-[12.5px] font-medium whitespace-nowrap transition-colors sm:min-h-9 focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none sm:px-3.5 sm:py-2 sm:text-[13px] lg:px-3 lg:text-[12px] xl:px-3.5 xl:text-[13px] ${
                       isActive
                         ? "border-transparent bg-gradient-to-b from-leaf to-leaf-deep text-white"
                         : "border-edge-strong text-snow-soft hover:border-leaf hover:text-leaf-bright"
@@ -263,7 +263,7 @@ export default function ToolGrid() {
 
                   <Link
                     href={TOOL_HREF}
-                    className="mt-auto inline-flex items-center gap-2 self-start rounded pt-5 text-sm font-medium text-leaf-bright transition hover:text-snow focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none"
+                    className="mt-auto inline-flex min-h-11 items-center gap-2 self-start rounded pt-4 text-sm font-medium text-leaf-bright transition hover:text-snow focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none"
                   >
                     {t.cta}
                     <ArrowRight

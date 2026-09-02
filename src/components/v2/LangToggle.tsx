@@ -33,7 +33,7 @@ export default function LangToggle({ className = "" }: { className?: string }) {
           type="button"
           onClick={() => setLang(l)}
           aria-pressed={lang === l}
-          className={`rounded-full px-2 py-1 text-[11px] font-semibold tracking-wide transition-colors ${
+          className={`inline-flex min-h-9 min-w-9 items-center justify-center rounded-full px-2.5 text-[11px] font-semibold tracking-wide transition-colors sm:min-h-8 sm:min-w-8 ${
             lang === l
               ? "bg-gradient-to-b from-leaf to-leaf-deep text-snow"
               : "text-snow-muted hover:text-snow"

@@ -109,6 +109,8 @@ export const BUILT: ReadonlySet<NavKey> = new Set<NavKey>([
   "solutions",
   "smart-tools",
   "how-it-works",
+  "about",
+  "pricing",
 ]);
 
 /**

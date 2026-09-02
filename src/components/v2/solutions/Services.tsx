@@ -191,7 +191,7 @@ export default function Services() {
 
                     <Link
                       href={HREFS[i]}
-                      className="mt-auto inline-flex items-center gap-2.5 self-start rounded pt-6 text-[15px] font-medium text-leaf-bright transition hover:text-snow focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none"
+                      className="mt-auto inline-flex min-h-11 items-center gap-2.5 self-start rounded pt-5 text-[15px] font-medium text-leaf-bright transition hover:text-snow focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none"
                     >
                       {c.cta}
                       <ArrowRight

@@ -162,11 +162,15 @@ function BrandIcon({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * Only entries with a real `href` are rendered — a dead social icon claims a
+ * profile we cannot point at. Fill in the URL and the icon appears.
+ */
 const SOCIALS = [
   {
     key: "linkedin",
     label: "LinkedIn",
-    href: "#",
+    href: "",
     icon: (
       <BrandIcon>
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -190,7 +194,7 @@ const SOCIALS = [
   {
     key: "youtube",
     label: "YouTube",
-    href: "#",
+    href: "",
     icon: (
       <BrandIcon>
         <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
@@ -218,7 +222,7 @@ export default function Footer() {
                 {t.tagline}
               </p>
               <ul className="mt-5 flex items-center gap-2.5">
-                {SOCIALS.map((s) => (
+                {SOCIALS.filter((s) => s.href).map((s) => (
                   <li key={s.key}>
                     <a
                       href={s.href}
@@ -253,15 +257,21 @@ export default function Footer() {
                 <h3 className="text-[13px] font-semibold text-snow">
                   {t.columns[key].title}
                 </h3>
-                <ul className="mt-4 space-y-2.5">
+                <ul className="mt-2 lg:mt-4 lg:space-y-1.5">
                   {t.columns[key].items.map((label, i) => (
                     <li key={label}>
-                      <Link
-                        href={COLUMN_HREFS[key][i]}
-                        className="text-[13px] text-snow-soft transition-colors hover:text-leaf-bright"
-                      >
-                        {label}
-                      </Link>
+                      {COLUMN_HREFS[key][i] === "#" ? (
+                        <span className="inline-flex min-h-11 items-center text-[13px] text-snow-muted/70 lg:min-h-0 lg:py-1">
+                          {label}
+                        </span>
+                      ) : (
+                        <Link
+                          href={COLUMN_HREFS[key][i]}
+                          className="inline-flex min-h-11 items-center text-[13px] text-snow-soft transition-colors hover:text-leaf-bright lg:min-h-0 lg:py-1"
+                        >
+                          {label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -277,7 +287,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={`mailto:${EMAIL}`}
-                    className="flex items-start gap-2 text-[13px] break-words text-snow-soft transition-colors hover:text-leaf-bright"
+                    className="flex min-h-11 items-center gap-2 text-[13px] break-words text-snow-soft transition-colors hover:text-leaf-bright lg:min-h-0"
                   >
                     <Mail
                       size={15}

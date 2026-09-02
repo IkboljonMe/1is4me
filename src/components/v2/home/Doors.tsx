@@ -138,7 +138,7 @@ export default function Doors() {
 
                     <Link
                       href={HREF}
-                      className="group mt-5 inline-flex items-center gap-3 rounded text-[15px] font-medium text-leaf-bright transition hover:text-snow focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none"
+                      className="group mt-4 inline-flex min-h-11 items-center gap-3 rounded text-[15px] font-medium text-leaf-bright transition hover:text-snow focus-visible:ring-2 focus-visible:ring-leaf/60 focus-visible:outline-none"
                     >
                       {c.cta}
                       <ArrowRight
