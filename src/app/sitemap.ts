@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: SITE_URL, lastModified: new Date(), priority: 1 },
     { url: `${SITE_URL}/solutions`, lastModified: new Date(), priority: 0.9 },
+    { url: `${SITE_URL}/smart-tools`, lastModified: new Date(), priority: 0.9 },
     { url: `${SITE_URL}/audit-form`, lastModified: new Date(), priority: 0.8 },
   ];
 }

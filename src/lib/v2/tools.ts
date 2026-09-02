@@ -22,14 +22,14 @@ import type { Copy } from "@/lib/v2/copy";
  * pages that draw the icons as green outlines simply ignore it.
  */
 export const TOOLS: { name: string; Icon: LucideIcon; chip: string }[] = [
-  { name: "AI Writer", Icon: PenLine, chip: "#0F4585" },
+  { name: "Content Writer", Icon: PenLine, chip: "#0F4585" },
   { name: "Market Research", Icon: Search, chip: "#96303A" },
   { name: "Business Ideas", Icon: Lightbulb, chip: "#8A7318" },
   { name: "Competitor Analysis", Icon: Brain, chip: "#0F7A71" },
-  { name: "Content Planner", Icon: CalendarDays, chip: "#5A2C8C" },
-  { name: "Data Analysis", Icon: ChartNoAxesCombined, chip: "#2A7A2C" },
+  { name: "Strategy Planner", Icon: CalendarDays, chip: "#5A2C8C" },
+  { name: "Data Analyzer", Icon: ChartNoAxesCombined, chip: "#2A7A2C" },
   { name: "Social Media Ideas", Icon: Heart, chip: "#A3355F" },
-  { name: "Business Check", Icon: LayoutDashboard, chip: "#B27C1B" },
+  { name: "Business Checker", Icon: LayoutDashboard, chip: "#B27C1B" },
 ];
 
 /** One caption per tool, in the order of TOOLS. */

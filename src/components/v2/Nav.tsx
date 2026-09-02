@@ -107,6 +107,7 @@ export const AUDIT_HREF = "/audit-form";
 export const BUILT: ReadonlySet<NavKey> = new Set<NavKey>([
   "home",
   "solutions",
+  "smart-tools",
 ]);
 
 /**
