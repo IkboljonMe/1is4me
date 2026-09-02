@@ -74,7 +74,7 @@ export default function Tools() {
                 <p className="mt-4 max-w-[34ch] text-sm leading-relaxed text-snow-soft">
                   {t.lead}
                 </p>
-                <Button href="/v2/smart-tools" className="mt-6">
+                <Button href="/smart-tools" className="mt-6">
                   {t.cta}
                 </Button>
               </div>

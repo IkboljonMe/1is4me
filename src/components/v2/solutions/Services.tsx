@@ -119,7 +119,7 @@ const PHOTOS: (string | undefined)[] = [undefined, undefined, undefined];
  * TODO(routes): each card should link to its own service page. Those pages do
  * not exist yet, so all three point back at this one.
  */
-const HREFS = ["/v2/solutions", "/v2/solutions", "/v2/solutions"];
+const HREFS = ["/solutions", "/solutions", "/solutions"];
 
 /** "Our Three Core Services" — the three service cards (reference/solutions.PNG). */
 export default function Services() {

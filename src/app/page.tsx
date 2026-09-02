@@ -1,34 +1,29 @@
-import CTA from "@/components/CTA";
-import Doors from "@/components/Doors";
-import Footer from "@/components/Footer";
-import Gaps from "@/components/Gaps";
-import Hero from "@/components/Hero";
-import Nav from "@/components/Nav";
-import Offers from "@/components/Offers";
-import Outcomes from "@/components/Outcomes";
-import Process from "@/components/Process";
-import Proof from "@/components/Proof";
-import Team from "@/components/Team";
+import Nav from "@/components/v2/Nav";
+import Hero from "@/components/v2/home/Hero";
+import Achieve from "@/components/v2/home/Achieve";
+import Doors from "@/components/v2/home/Doors";
+import Tools from "@/components/v2/home/Tools";
+import Proof from "@/components/v2/home/Proof";
+import CtaBand from "@/components/v2/home/CtaBand";
+import Footer from "@/components/v2/Footer";
 
 /**
- * Section order is load-bearing — each block creates the reason for the next:
- * hook → what we sell → where you're stuck → which door → what you get →
- * how it runs → who we are → proof → one action.
+ * Home — the first page of the rebuild (reference/home.PNG).
+ *
+ * Each section owns its own vertical rhythm and its own EN/UZ/RU copy, so a
+ * section can be reworked without touching this file or its neighbours.
  */
-export default function Home() {
+export default function V2Home() {
   return (
     <>
-      <Nav />
+      <Nav active="home" />
       <main>
         <Hero />
-        <Offers />
-        <Gaps />
+        <Achieve />
         <Doors />
-        <Outcomes />
-        <Process />
-        <Team />
+        <Tools />
         <Proof />
-        <CTA />
+        <CtaBand />
       </main>
       <Footer />
     </>

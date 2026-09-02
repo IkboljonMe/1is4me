@@ -7,11 +7,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://1is4me.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "1is4me — AI Growth Partner",
-    template: "%s · 1is4me",
+    default: "1is4Me — Growth Partner",
+    template: "%s · 1is4Me",
   },
   description:
-    "AI systems for growing businesses. We help SMB owners get back their time, scale their business, and grow their profit with AI + automation.",
+    "We help businesses understand, plan and build with confidence. One partner for your growth journey.",
   keywords: [
     "AI automation",
     "business automation",
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "1is4me",
-    title: "1is4me — AI Growth Partner",
+    siteName: "1is4Me",
+    title: "1is4Me — Growth Partner",
     description:
-      "Learn It. Plan It. Build It. One AI-run team instead of the five hires you'd otherwise need.",
+      "Clarity today. Better decisions. Stronger tomorrow. Education, consulting and implementation from one growth partner.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "1is4me — AI Growth Partner",
+    title: "1is4Me — Growth Partner",
     description:
-      "Learn It. Plan It. Build It. AI systems for growing businesses.",
+      "Clarity today. Better decisions. Stronger tomorrow.",
   },
   robots: { index: true, follow: true },
 };

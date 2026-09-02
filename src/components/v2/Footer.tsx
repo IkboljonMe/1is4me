@@ -7,7 +7,7 @@ import { useLang } from "@/components/LangProvider";
 import type { Copy } from "@/lib/v2/copy";
 import Reveal from "@/components/Reveal";
 import { Container } from "@/components/v2/ui";
-import { NAV_HREF, Wordmark } from "@/components/v2/Nav";
+import { BUILT, NAV_HREF, Wordmark, type NavKey } from "@/components/v2/Nav";
 
 /**
  * The v2 footer (reference/home.PNG): brand column, six link columns, and a
@@ -129,14 +129,17 @@ const COLUMN_ORDER: ColumnKey[] = [
 ];
 
 /** Destinations are language-independent. "#" = page not written yet. */
+/** A route only becomes a link once its page exists — see BUILT in Nav. */
+const href = (key: NavKey) => (BUILT.has(key) ? NAV_HREF[key] : "#");
+
 const COLUMN_HREFS: Record<ColumnKey, string[]> = {
-  solutions: [NAV_HREF.solutions, NAV_HREF.solutions, NAV_HREF.solutions],
+  solutions: [href("solutions"), href("solutions"), href("solutions")],
   smartTools: [
-    NAV_HREF["smart-tools"],
-    NAV_HREF["smart-tools"],
-    NAV_HREF["smart-tools"],
+    href("smart-tools"),
+    href("smart-tools"),
+    href("smart-tools"),
   ],
-  company: [NAV_HREF.about, NAV_HREF["how-it-works"], "#"],
+  company: [href("about"), href("how-it-works"), "#"],
   resources: ["#", "#", "#"],
   legal: ["#", "#"],
 };

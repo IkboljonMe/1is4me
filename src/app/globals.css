@@ -96,40 +96,20 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--night);
+  color: var(--snow);
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
 
-/* Film grain + vignette — the depth that makes the dark read as premium
-   rather than flat. Both are fixed so they never scroll with content. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 1;
-}
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(ellipse 90% 55% at 50% 0%, transparent 0%, var(--bg-vignette) 100%);
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Everything real sits above the two overlays. */
+/* Retained for the audit form, which still wears the previous skin. */
 .layer { position: relative; z-index: 3; }
 
-::selection { background: var(--mint); color: var(--bg); }
+::selection { background: var(--leaf-bright); color: var(--night); }
 
 :focus-visible {
-  outline: 2px solid var(--mint);
+  outline: 2px solid var(--leaf-bright);
   outline-offset: 3px;
   border-radius: 4px;
 }

@@ -85,7 +85,7 @@ const NUMBERS = ["01", "02", "03"];
 /** Hairlines only between columns on the same row — 3-up from md, stacked below. */
 const DIVIDERS = ["", "md:border-l md:border-edge", "md:border-l md:border-edge"];
 
-const HREF = "/v2/solutions";
+const HREF = "/solutions";
 
 /** "Three doors. One partner." — the three-service card. */
 export default function Doors() {

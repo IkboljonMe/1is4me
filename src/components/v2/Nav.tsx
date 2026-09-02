@@ -89,15 +89,25 @@ const NAV_ORDER: NavKey[] = [
 
 /** Routes are language-independent, so they live outside the copy object. */
 export const NAV_HREF: Record<NavKey, string> = {
-  home: "/v2",
-  solutions: "/v2/solutions",
-  "smart-tools": "/v2/smart-tools",
-  "how-it-works": "/v2/how-it-works",
-  pricing: "/v2/pricing",
-  about: "/v2/about",
+  home: "/",
+  solutions: "/solutions",
+  "smart-tools": "/smart-tools",
+  "how-it-works": "/how-it-works",
+  pricing: "/pricing",
+  about: "/about",
 };
 
 export const AUDIT_HREF = "/audit-form";
+
+/**
+ * Pages that actually exist. The rebuild ships page by page, and until a
+ * route lands its nav entry renders as plain text rather than a link that
+ * would 404. Add the key here the moment its page.tsx exists.
+ */
+export const BUILT: ReadonlySet<NavKey> = new Set<NavKey>([
+  "home",
+  "solutions",
+]);
 
 /**
  * The logo lockup: "1" and "4" in leaf green, GROWTH PARTNER beneath.
@@ -154,12 +164,25 @@ export default function Nav({ active = "home" }: { active?: NavKey }) {
         <nav aria-label="Main" className="hidden items-center gap-4 lg:flex xl:gap-8">
           {NAV_ORDER.map((key) => {
             const isActive = key === active;
+            const base =
+              "relative whitespace-nowrap text-[13px] transition-colors xl:text-[14px]";
+            if (!BUILT.has(key)) {
+              return (
+                <span
+                  key={key}
+                  aria-disabled="true"
+                  className={`${base} cursor-default text-snow-muted/60`}
+                >
+                  {t.links[key]}
+                </span>
+              );
+            }
             return (
               <Link
                 key={key}
                 href={NAV_HREF[key]}
                 aria-current={isActive ? "page" : undefined}
-                className={`relative whitespace-nowrap text-[13px] transition-colors xl:text-[14px] ${
+                className={`${base} ${
                   isActive
                     ? "font-semibold text-snow after:absolute after:-bottom-2.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-leaf-bright"
                     : "text-snow-soft hover:text-snow"
@@ -212,18 +235,27 @@ export default function Nav({ active = "home" }: { active?: NavKey }) {
             <ul className="flex flex-col">
               {NAV_ORDER.map((key) => (
                 <li key={key}>
-                  <Link
-                    href={NAV_HREF[key]}
-                    aria-current={key === active ? "page" : undefined}
-                    onClick={() => setOpenPath(null)}
-                    className={`block border-b border-edge/60 py-3 text-[15px] ${
-                      key === active
-                        ? "font-semibold text-leaf-bright"
-                        : "text-snow-soft"
-                    }`}
-                  >
-                    {t.links[key]}
-                  </Link>
+                  {BUILT.has(key) ? (
+                    <Link
+                      href={NAV_HREF[key]}
+                      aria-current={key === active ? "page" : undefined}
+                      onClick={() => setOpenPath(null)}
+                      className={`block border-b border-edge/60 py-3 text-[15px] ${
+                        key === active
+                          ? "font-semibold text-leaf-bright"
+                          : "text-snow-soft"
+                      }`}
+                    >
+                      {t.links[key]}
+                    </Link>
+                  ) : (
+                    <span
+                      aria-disabled="true"
+                      className="block border-b border-edge/60 py-3 text-[15px] text-snow-muted/60"
+                    >
+                      {t.links[key]}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

@@ -141,7 +141,7 @@ export default function Hero() {
           <Reveal delay={180}>
             <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
               <Button href="/audit-form">{t.primaryCta}</Button>
-              <Button href="/v2/how-it-works" variant="ghost">
+              <Button href="/how-it-works" variant="ghost">
                 {t.ghostCta}
                 <CirclePlay aria-hidden size={18} strokeWidth={1.5} />
               </Button>
